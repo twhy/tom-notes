@@ -10,9 +10,8 @@
 
       this.$el = document.querySelector('#app');   // $ 开头的属性都是 DOM 元素，用于区分普通属性
 
-      // 对象作为事件监听器，事件委托模式
+      // 对象作为事件监听器
       // https://github.com/fe13/fe/blob/master/JavaScript/DOM/02.%20%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80.md#对象作为事件监听器
-      // https://github.com/fe13/fe/blob/master/JavaScript/DOM/02.%20%E4%BA%8B%E4%BB%B6%E5%9F%BA%E7%A1%80.md#事件委托-event-delegation
       this.$el.addEventListener('click', this, false);
 
       this.$main = this.$el.querySelector('.main-view');          // 主界面元素
@@ -37,8 +36,7 @@
         case target.matches('.note'):
           this.view(event);
           break;
-        case target.matches('.add-note') ||
-          target.parentElement.matches('.add-note'):
+        case target.matches('.add-note') || target.parentElement.matches('.add-note'):
           this.add();
           break;
         case target.matches('.nav-btn-back'):
