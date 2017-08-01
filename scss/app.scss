@@ -165,6 +165,9 @@ html, body {
 
 .notes {
   font-size: 18px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100vh - #{$header-height});
   .note {
     color: #666;
     height: p2r(50px);
